@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BarChart3, PieChart, Calendar, Users, MapPin, X } from 'lucide-react';
 import axios from 'axios';
 import API_BASE_URL from '../../config/api';
-import PerformanceCalendar from '/Users/chenhao/Desktop/app/end/sparklelive-frontend/src/components/performances/PerformanceCalendar.jsx';
+import PerformanceCalendar from '../performances/PerformanceCalendar';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const StatisticsView = () => {
@@ -534,7 +534,7 @@ const StatisticsView = () => {
         {/* 统计卡片 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <StatCard
-            title="总演出场次"
+            title="总演出��次"
             value={statistics.totalPerformances}
             icon={Calendar}
             trend={10}
