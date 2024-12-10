@@ -1,9 +1,13 @@
 {
   "build": {
-    "command": "npm run build",
-    "output": "build"
+    "docker": {
+      "dockerfile": "Dockerfile"
+    }
   },
-  "env": {
-    "REACT_APP_API_URL": "https://artback.hkg1.zeabur.app/"
+  "deploy": {
+    "healthCheck": {
+      "path": "/health",
+      "port": 80
+    }
   }
 } 
