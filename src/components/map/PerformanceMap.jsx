@@ -35,7 +35,10 @@ const PerformanceMap = () => {
         
         // 获取地图数据
         const mapResponse = await fetch(CHINA_MAP_API);
-        if (!mapResponse.ok) throw new Error('获取地图数据失败');
+        if (!mapResponse.ok) {
+          console.error('Failed to load map data:', mapResponse.statusText);
+          throw new Error('获取地图数据失败');
+        }
         const mapJson = await mapResponse.json();
         setMapData(mapJson);
 
