@@ -58,6 +58,11 @@ const PerformanceMap = () => {
           // 处理数据并按省份分组
           const dataByProvince = {};
           data.data.forEach(performance => {
+            if (!performance.province) {
+              console.warn('Performance missing province:', performance);
+              return;
+            }
+            
             const provinceName = performance.province
               .replace(/省|自治区|维吾尔|回族|壮族|特别行政区/g, '')
               .trim();
